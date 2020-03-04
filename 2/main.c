@@ -44,6 +44,7 @@ void impares(int n)
 			printf("%d\n", vet[i]);
 		i++;
 	}
+	scanf("%d", &i);
 }
 void pares(int n)
 {
