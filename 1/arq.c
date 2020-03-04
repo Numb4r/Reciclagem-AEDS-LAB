@@ -1,7 +1,7 @@
 #include "arq.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <strring>
+#include <string.h>
 int init()
 {
     FILE *fp;
