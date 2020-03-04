@@ -36,26 +36,24 @@ int insertAluno(Aluno aluno, char *arq)
     fprintf(fp, "%f\n", aluno.nota4);
     fclose(fp);
 }
-//TODO: Fix duplicated print
+
 int listarAlunosAprovados()
 {
     Aluno aluno;
     float NF;
     FILE *fp;
+    char c;
     if (!(fp = fopen("alunos.txt", "r")))
     {
         return -1;
     }
+    fscanf(fp, "%s\n%f\n%f\n%f\n%f", aluno.nome, &aluno.nota1, &aluno.nota2, &aluno.nota3, &aluno.nota4);
     while (!feof(fp))
     {
-        fscanf(fp, "%s", aluno.nome);
-        fscanf(fp, "%f", &aluno.nota1);
-        fscanf(fp, "%f", &aluno.nota2);
-        fscanf(fp, "%f", &aluno.nota3);
-        fscanf(fp, "%f", &aluno.nota4);
         NF = ((aluno.nota1 + aluno.nota2) / 4 + aluno.nota3 + (2 * aluno.nota4)) / 4;
         if (strlen(aluno.nome) != 0 && NF > 60)
             printf("%s %f %f %f %f\n", aluno.nome, aluno.nota1, aluno.nota2, aluno.nota3, aluno.nota4);
+        fscanf(fp, "%s\n%f\n%f\n%f\n%f", aluno.nome, &aluno.nota1, &aluno.nota2, &aluno.nota3, &aluno.nota4);
     }
 
     fclose(fp);
@@ -69,17 +67,14 @@ int listarAlunosEmRecuperacao()
     {
         return -1;
     }
+    fscanf(fp, "%s\n%f\n%f\n%f\n%f", aluno.nome, &aluno.nota1, &aluno.nota2, &aluno.nota3, &aluno.nota4);
     while (!feof(fp))
     {
-        fscanf(fp, "%s", aluno.nome);
-        fscanf(fp, "%f", &aluno.nota1);
-        fscanf(fp, "%f", &aluno.nota2);
-        fscanf(fp, "%f", &aluno.nota3);
-        fscanf(fp, "%f", &aluno.nota4);
+
         NF = ((aluno.nota1 + aluno.nota2) / 4 + aluno.nota3 + (2 * aluno.nota4)) / 4;
         if (strlen(aluno.nome) != 0 && NF >= 35)
-
             printf("%s %f %f %f %f\n", aluno.nome, aluno.nota1, aluno.nota2, aluno.nota3, aluno.nota4);
+        fscanf(fp, "%s\n%f\n%f\n%f\n%f", aluno.nome, &aluno.nota1, &aluno.nota2, &aluno.nota3, &aluno.nota4);
     }
 
     fclose(fp);
