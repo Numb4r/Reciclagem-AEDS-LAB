@@ -33,6 +33,9 @@ clean:
 	rm -f $(EXECUTABLE)
 	rm -f $(LIBRARY)
 	
+cleanfiles:
+	echo  > pendentes.txt
+	echo > alunos.txt	
 ##########################################################
 leakcheck:	build
 	valgrind --leak-check=yes --show-reachable=yes ./$(EXECUTABLE)
