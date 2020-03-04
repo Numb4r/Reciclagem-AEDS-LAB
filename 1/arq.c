@@ -1,7 +1,7 @@
+#include "arq.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include "aluno.h"
-#include <string.h>
+#include <strring>
 int init()
 {
     FILE *fp;
