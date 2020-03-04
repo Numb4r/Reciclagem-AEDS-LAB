@@ -50,7 +50,7 @@ int main(int argc, char const *argv[])
             aux = vet;
             do
             {
-                printf("%d\n", *vet);
+                printf("%d\n", *aux);
                 aux++;
             } while (aux != vet + 5);
             break;
