@@ -106,7 +106,7 @@ int main()
 {
 	srand(time(NULL));
 
-	init(vet);
+	init();
 	menu(vet);
 	return 0;
 }
